@@ -1,0 +1,25 @@
+<ul>
+	<li id="item-{{item.id}}" 
+  class="list-item"
+  [class.red]="currentClickSM == ('item-'+item.id)" *ngFor="let item of mapping "
+  [class.mapped]="mappedStandardMetrics['item-'+item.id]"
+  [class.mapped-and-selected]="(currentClickSM == 'item-'+item.id && selectionWasMapped(currentClickSM)) || (selectionWasMapped2(currentClickFMM) && this.mappingStore[this.mappedIndex].mapping == 'item-'+item.id)"
+  (click)="doSomething($event.currentTarget)"
+  >item</li>
+</ul>
+<ul>
+	<li id="alt-item-{{item.id}}" 
+  class="list-item"
+  [class.red]="currentClickFMM == ('alt-item-'+item.id)" *ngFor="let item of mapping2 "
+  (click)="doSomething2($event.currentTarget)"
+  [class.mapped]="mappedFinancialModelMetrics['alt-item-'+item.id]"
+  [class.mapped-and-selected]="(currentClickFMM == 'alt-item-'+item.id && selectionWasMapped2(currentClickFMM)) || (selectionWasMapped(currentClickSM) && this.mappingStore[this.mappedIndex].mapping2 == 'alt-item-'+item.id)"
+  >item</li>
+</ul>
+
+<div>
+  current click sm: {{currentClickSM}}<br>
+  selected sm: {{selectedSM}}<br><br>
+  current click fmm: {{currentClickFMM}}<br>
+  selected fmm: {{selectedFMM}}
+  </div>

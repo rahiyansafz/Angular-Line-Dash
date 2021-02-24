@@ -1,0 +1,21 @@
+p {
+  font-family: Lato;
+}
+
+.red {
+  background: red;
+}
+
+.mapped {
+  background: yellow;
+}
+
+.mapped-and-selected {
+  background:purple;
+}
+
+ul {
+  display: inline-block;
+  width: 50px;
+  margin-right: 100px;
+}
